@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="ad border-start d-flex justify-content-center align-items-center" style="height: 100px; flex-shrink: 0;">Bottom-AD Section</div>
     </section>
     
-    <footer class="text-center fixed-bottom bg-none" id="site-footer">
+    <footer class="text-center bg-none" id="site-footer">
         
         <div class="bg-dark text-white py-3">
             <p class="mb-0">© 2025 SuperMiner.com | 

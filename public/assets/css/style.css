@@ -1,7 +1,8 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f6f5;
-    overflow: hidden;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 .hero-section {
@@ -41,15 +42,17 @@ body {
 }
 
 .coin-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
     background-color: #fff;
     border: none;
     border-radius: 10px;
 }
 
-.coin-card:hover {
+.coin-card:hover, .coin-card:active {
     transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3) !important;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3) !important;
 }
 
 .calc-card {
@@ -78,10 +81,9 @@ body {
     border-radius: 25px;
 }
 
-.ad-part {
-    background-color: #f8f9fa;
+.ad, .bottom-ad {
+    background-color: #b9b9b9;
     border: 1px solid #e9ecef;
-    border-radius: 10px;
 }
 
 .form-control,
@@ -94,7 +96,6 @@ body {
 footer {
     background-color: #343a40;
     position: relative;
-    bottom: 0;
     width: 100%;
 }
 
@@ -129,33 +130,31 @@ footer {
         display: block !important;
     }
     #coin-summaries {
-        padding: 0;
-        padding-left: 12px;
-        padding-right: 0;
+        padding: 0 12px;
     }
 }
-.main-container{
-    display:  flex;
-    flex-direction : column;
-    justify-content: space-between;
-}
-.header{
-    height:72px;
-}
-.main{
-    overflow-y: hidden;
-}
-#coin-summaries{
-    padding: 0px;
-    padding-right: 0px;
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-#coin-summaries{
-    padding: 0px;
-    padding-right: 0px;
+.header {
+    height: 72px;
 }
 
-#main-content{
+.main {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+#coin-summaries {
+    padding: 0 12px;
+}
+
+#main-content {
+    flex-grow: 1;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -167,8 +166,15 @@ footer {
 
 #site-footer {
     background: none;
+    position: relative;
 }
 
-.ad {
-    background-color: #b9b9b9;
+.bottom-ad {
+    margin-bottom: 60px; /* Ensure space for footer on mobile */
+}
+
+@supports (-webkit-touch-callout: none) {
+    #main-content {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
 }

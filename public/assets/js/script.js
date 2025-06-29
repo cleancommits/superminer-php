@@ -17,33 +17,37 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Card hover animation
+    // Card touch support for mobile
     const cards = document.querySelectorAll('.coin-card');
     cards.forEach(card => {
-        card.addEventListener('mouseenter', function () {
+        card.addEventListener('touchstart', function () {
             this.style.transform = 'translateY(-5px)';
+            this.style.webkitTransform = 'translateY(-5px)';
         });
-        card.addEventListener('mouseleave', function () {
+        card.addEventListener('touchend', function () {
             this.style.transform = 'translateY(0)';
+            this.style.webkitTransform = 'translateY(0)';
         });
     });
 
-    // Adjust main content height based on footer height
+    // Adjust main content height based on footer and header height
     function adjustMainContentHeight() {
         const header = document.getElementById('site-header');
         const footer = document.getElementById('site-footer');
         const mainContent = document.getElementById('main-content');
-        if (footer && mainContent) {
+        if (footer && mainContent && header) {
             const footerHeight = footer.offsetHeight;
             const headerHeight = header.offsetHeight;
-            console.log(`Footer Height: ${footerHeight}px, Header Height: ${headerHeight}px`);
-            mainContent.style.height = `calc(100vh - ${footerHeight}px - ${headerHeight}px)`;
+            const viewportHeight = window.innerHeight; // Use innerHeight for iOS compatibility
+            console.log(`Footer Height: ${footerHeight}px, Header Height: ${headerHeight}px, Viewport Height: ${viewportHeight}px`);
+            mainContent.style.minHeight = `${viewportHeight - footerHeight - headerHeight}px`;
         }
     }
 
-    // Run height adjustment on page load and resize
+    // Run height adjustment on page load, resize, and orientation change
     adjustMainContentHeight();
     window.addEventListener('resize', adjustMainContentHeight);
+    window.addEventListener('orientationchange', adjustMainContentHeight);
 
     // Real-time data polling
     function updateCoinData() {

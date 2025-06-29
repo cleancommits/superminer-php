@@ -9,7 +9,7 @@ $coins = fetchMiningData();
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <title>SuperMiner.com - Mining Profitability</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
@@ -45,39 +45,39 @@ $coins = fetchMiningData();
         </header>
 
         <section id="main-content">
-            <div class="row w-100" style="margin-left: 0px; ">
+            <div class="row w-100" style="margin-left: 0px;">
                 <div class="col-lg-2 border-end d-none d-lg-flex justify-content-center align-items-center">Left-AD Section</div>
-                    <div class="col-lg-8 pt-3 pb-3">
-                        <h2 class="text-center mb-4 fw-bold text-primary">Top 10 Coins</h2>
-                        <div class="row g-4" id="coin-summaries">
-                            <?php $i = 0; ?>
-                            <?php foreach ($coins as $coin => $data): ?>
-                                <?php 
-                                    $i++; 
-                                    if ($i > 10) break;
-                                ?>
-                                <div class="col-lg-4 col-md-12">
-                                    <a class="card coin-card shadow-sm h-100 text-decoration-none" href="<?php echo !empty($data['link']) ? htmlspecialchars($data['link']) : '#'; ?>" target="_blank" data-coin="<?php echo htmlspecialchars($coin); ?>">
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title text-secondary fw-bold"><?php echo htmlspecialchars($coin); ?></h5>
-                                            <p class="card-text text-muted">Profitability: <span class="text-success fw-bold coin-profitability">$<?php echo number_format($data['profitability'], decimals: 5); ?>/day</span></p>
-                                            <p class="card-text text-muted">Difficulty: <span class="fw-bold coin-difficulty"><?php echo number_format($data['difficulty'], 10); ?></span></p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <?php if ($i === 5): ?>
-                                    <div class="ad col-md-12 d-md-flex d-sm-flex d-flex d-lg-none justify-content-center align-items-center" style="height: 100px;">
-                                       AD Section
+                <div class="col-lg-8 pt-3 pb-3">
+                    <h2 class="text-center mb-4 fw-bold text-primary">Top 10 Coins</h2>
+                    <div class="row g-4" id="coin-summaries">
+                        <?php $i = 0; ?>
+                        <?php foreach ($coins as $coin => $data): ?>
+                            <?php 
+                                $i++; 
+                                if ($i > 10) break;
+                            ?>
+                            <div class="col-lg-4 col-md-12">
+                                <a class="card coin-card shadow-sm h-100 text-decoration-none" href="<?php echo !empty($data['link']) ? htmlspecialchars($data['link']) : '#'; ?>" target="_blank" data-coin="<?php echo htmlspecialchars($coin); ?>">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-secondary fw-bold"><?php echo htmlspecialchars($coin); ?></h5>
+                                        <p class="card-text text-muted">Profitability: <span class="text-success fw-bold coin-profitability">$<?php echo number_format($data['profitability'], decimals: 5); ?>/day</span></p>
+                                        <p class="card-text text-muted">Difficulty: <span class="fw-bold coin-difficulty"><?php echo number_format($data['difficulty'], 10); ?></span></p>
                                     </div>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        </div>
+                                </a>
+                            </div>
+                            <?php if ($i === 5): ?>
+                                <div class="ad col-md-12 d-md-flex d-sm-flex d-flex d-lg-none justify-content-center align-items-center" style="height: 100px;">
+                                    AD Section
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </div>
+                </div>
                 <div class="col-lg-2 border-start d-none d-lg-flex justify-content-center align-items-center">Right-AD Section</div>
             </div>
             <div class="ad border-start d-flex justify-content-center align-items-center" style="height: 100px; flex-shrink: 0;">Bottom-AD Section</div>
         </section>
-        <footer class="text-center fixed-bottom bg-none" id="site-footer">
+        <footer class="text-center bg-none" id="site-footer">
             <div class="bg-dark text-white py-3">
                 <p class="mb-0">© 2025 SuperMiner.com | 
                 <a href="<?php echo AFFILIATE_AMAZON; ?>" class="text-white">Buy on Amazon</a> | 
