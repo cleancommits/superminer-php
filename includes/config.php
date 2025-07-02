@@ -6,6 +6,7 @@ define('API_WHATTOMINE_URL', $env['API_WHATTOMINE_URL']);
 define('API_NICEHASH_URL', $env['API_NICEHASH_URL']);
 define('AFFILIATE_AMAZON', $env['AFFILIATE_AMAZON']);
 define('AFFILIATE_NEWEGG', $env['AFFILIATE_NEWEGG']);
+define('WHATTOMINE_API_TOKEN', $env['WHATTOMINE_API_TOKEN']);
 define('PUBLIC_DIR', __DIR__ . '/../public');
 define('CONFIG_DIR', __DIR__ . '/../config');
 ?>

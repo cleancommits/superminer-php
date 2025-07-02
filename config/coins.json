@@ -1,58 +1,63 @@
 {
     "Grin-CT32": {
         "link": "https:\/\/whattomine.com\/coins\/324-grin-cuckatoo32",
-        "profitability": "24.10625",
-        "difficulty": 415344.6522216797
+        "profitability": "19.15571",
+        "difficulty": 522722.1203613281
     },
     "Zano": {
         "link": "https:\/\/whattomine.com\/coins\/330-zano-progpowz",
-        "profitability": "0.09727",
-        "difficulty": 70813443607592
+        "profitability": "0.09646",
+        "difficulty": 71407060142812
     },
     "Firo": {
         "link": "https:\/\/whattomine.com\/coins\/175-firo-firopow",
-        "profitability": "1.12159",
-        "difficulty": 396.975060337892
-    },
-    "Ravencoin": {
-        "link": "https:\/\/whattomine.com\/coins\/234-rvn-kawpow",
-        "profitability": "63.49967",
-        "difficulty": 65576.02504007939
+        "profitability": "1.34681",
+        "difficulty": 330.001770294458
     },
     "Conflux": {
         "link": "https:\/\/whattomine.com\/coins\/337-cfx-octopus",
-        "profitability": "12.83859",
-        "difficulty": 1539822743199
+        "profitability": "10.71579",
+        "difficulty": 1844669534374
+    },
+    "Abelian": {
+        "link": "https:\/\/whattomine.com\/coins\/397-abel-abelhash",
+        "profitability": "14.09376",
+        "difficulty": 23516.22832707
     },
     "Nicehash-Octopus": {
         "link": "https:\/\/whattomine.com\/coins\/47-nicehash-octopus",
         "profitability": "0.00001",
         "difficulty": 1
     },
+    "Ravencoin": {
+        "link": "https:\/\/whattomine.com\/coins\/234-rvn-kawpow",
+        "profitability": "64.32182",
+        "difficulty": 64737.82855764738
+    },
+    "Epic Cash": {
+        "link": "https:\/\/whattomine.com\/coins\/438-epic-progpow",
+        "profitability": "4.21859",
+        "difficulty": 1509523051058
+    },
     "Nicehash-KawPow": {
         "link": "https:\/\/whattomine.com\/coins\/45-nicehash-kawpow",
         "profitability": "0.00001",
         "difficulty": 1
     },
-    "Frencoin": {
-        "link": "https:\/\/whattomine.com\/coins\/380-fren-kawpow",
-        "profitability": "949731.27455",
-        "difficulty": 16.95978649845333
+    "Quai": {
+        "link": "https:\/\/whattomine.com\/coins\/443-quai-progpow",
+        "profitability": "12.9401",
+        "difficulty": 5659559158713
     },
     "Cortex": {
         "link": "https:\/\/whattomine.com\/coins\/329-ctxc-cortex",
-        "profitability": "11.88683",
-        "difficulty": 247128
+        "profitability": "11.56093",
+        "difficulty": 254100
     },
-    "Neoxa": {
-        "link": "https:\/\/whattomine.com\/coins\/351-neox-kawpow",
-        "profitability": "3951.45802",
-        "difficulty": 947.2822105374598
-    },
-    "AIPowerGrid": {
-        "link": "https:\/\/whattomine.com\/coins\/392-aipg-kawpow",
-        "profitability": "192.60076",
-        "difficulty": 115.6616937374183
+    "Frencoin": {
+        "link": "https:\/\/whattomine.com\/coins\/380-fren-kawpow",
+        "profitability": "1021250.96505",
+        "difficulty": 15.731565197796138
     },
     "Nicehash-ZelHash": {
         "link": "https:\/\/whattomine.com\/coins\/49-nicehash-zelhash",
@@ -61,191 +66,186 @@
     },
     "Flux": {
         "link": "https:\/\/whattomine.com\/coins\/287-flux-pouw",
-        "profitability": "3.61082",
-        "difficulty": 20666.09256885706
-    },
-    "Abelian": {
-        "link": "https:\/\/whattomine.com\/coins\/397-abel-abelhash",
-        "profitability": "11.00696",
-        "difficulty": 30105.15829365
-    },
-    "Beam": {
-        "link": "https:\/\/whattomine.com\/coins\/294-beam-beamhashiii",
-        "profitability": "22.93218",
-        "difficulty": 9120967
-    },
-    "Sero": {
-        "link": "https:\/\/whattomine.com\/coins\/328-sero-progpow",
-        "profitability": "159.95809",
-        "difficulty": 52659202257
-    },
-    "Satoxcoin": {
-        "link": "https:\/\/whattomine.com\/coins\/375-satox-kawpow",
-        "profitability": "9257.41366",
-        "difficulty": 47.44266541487334
-    },
-    "Epic Cash": {
-        "link": "https:\/\/whattomine.com\/coins\/438-epic-progpow",
-        "profitability": "5.05371",
-        "difficulty": 1259260474099
-    },
-    "Ergo": {
-        "link": "https:\/\/whattomine.com\/coins\/340-erg-autolykos",
-        "profitability": "0.70333",
-        "difficulty": 849093559582720
+        "profitability": "5.07196",
+        "difficulty": 14711.66734188554
     },
     "Ryo": {
         "link": "https:\/\/whattomine.com\/coins\/260-ryo-cryptonightgpu",
-        "profitability": "129.87802",
-        "difficulty": 190619365
+        "profitability": "217.11833",
+        "difficulty": 113135345
     },
-    "Quai": {
-        "link": "https:\/\/whattomine.com\/coins\/443-quai-progpow",
-        "profitability": "8.25253",
-        "difficulty": 6498545716258
+    "Beam": {
+        "link": "https:\/\/whattomine.com\/coins\/294-beam-beamhashiii",
+        "profitability": "24.12305",
+        "difficulty": 8670396
+    },
+    "Satoxcoin": {
+        "link": "https:\/\/whattomine.com\/coins\/375-satox-kawpow",
+        "profitability": "15121.00989",
+        "difficulty": 28.56581458823209
     },
     "Vertcoin": {
         "link": "https:\/\/whattomine.com\/coins\/5-vtc-verthash",
-        "profitability": "8.85918",
-        "difficulty": 96.141384388807
+        "profitability": "9.18641",
+        "difficulty": 92.712412341053
+    },
+    "Neoxa": {
+        "link": "https:\/\/whattomine.com\/coins\/351-neox-kawpow",
+        "profitability": "3471.54231",
+        "difficulty": 1078.397056046795
+    },
+    "Neurai": {
+        "link": "https:\/\/whattomine.com\/coins\/366-xna-kawpow",
+        "profitability": "4111.73954",
+        "difficulty": 1619.229786969332
+    },
+    "Ergo": {
+        "link": "https:\/\/whattomine.com\/coins\/340-erg-autolykos",
+        "profitability": "0.7225",
+        "difficulty": 826686715199488
     },
     "Clore": {
         "link": "https:\/\/whattomine.com\/coins\/362-clore-kawpow",
-        "profitability": "42.49512",
-        "difficulty": 6086.378614002817
+        "profitability": "49.04961",
+        "difficulty": 5263.437403491228
+    },
+    "Xelis": {
+        "link": "https:\/\/whattomine.com\/coins\/419-xel-xelishashv2",
+        "profitability": "0.66774",
+        "difficulty": 11808508170
+    },
+    "AI-DePIN": {
+        "link": "https:\/\/whattomine.com\/coins\/416-aidp-kawpow",
+        "profitability": "3825.84298",
+        "difficulty": 77.20964052813969
     },
     "Nicehash-Autolykos": {
         "link": "https:\/\/whattomine.com\/coins\/48-nicehash-autolykos",
         "profitability": "0.00001",
         "difficulty": 1
     },
-    "Conceal": {
-        "link": "https:\/\/whattomine.com\/coins\/305-ccx-cryptonightgpu",
-        "profitability": "64.77524",
-        "difficulty": 68600000
-    },
-    "Neurai": {
-        "link": "https:\/\/whattomine.com\/coins\/366-xna-kawpow",
-        "profitability": "3401.81721",
-        "difficulty": 1958.147017119931
-    },
-    "AI-DePIN": {
-        "link": "https:\/\/whattomine.com\/coins\/416-aidp-kawpow",
-        "profitability": "4518.19075",
-        "difficulty": 65.18184679101897
-    },
     "Karlsen": {
         "link": "https:\/\/whattomine.com\/coins\/428-kls-karlsenhashv2",
-        "profitability": "2495.11532",
-        "difficulty": 125278555089.68153
+        "profitability": "2533.81486",
+        "difficulty": 123363899768.06938
+    },
+    "AIPowerGrid": {
+        "link": "https:\/\/whattomine.com\/coins\/392-aipg-kawpow",
+        "profitability": "207.79803",
+        "difficulty": 107.1182025398893
     },
     "IronFish": {
         "link": "https:\/\/whattomine.com\/coins\/411-iron-fishhash",
-        "profitability": "3.85171",
-        "difficulty": 48171897532165
+        "profitability": "4.40395",
+        "difficulty": 42130317473919
     },
-    "Nicehash-Zhash": {
-        "link": "https:\/\/whattomine.com\/coins\/30-nicehash-zhash",
-        "profitability": "0.0",
-        "difficulty": 1
+    "Sero": {
+        "link": "https:\/\/whattomine.com\/coins\/328-sero-progpow",
+        "profitability": "146.45459",
+        "difficulty": 57620465586
     },
     "Aeternity": {
         "link": "https:\/\/whattomine.com\/coins\/297-ae-cuckoocycle",
-        "profitability": "69.29461",
-        "difficulty": 1524200
-    },
-    "Xelis": {
-        "link": "https:\/\/whattomine.com\/coins\/419-xel-xelishashv2",
-        "profitability": "0.41787",
-        "difficulty": 18895836810
-    },
-    "Dynexcoin": {
-        "link": "https:\/\/whattomine.com\/coins\/359-dnx-dynexsolve",
-        "profitability": "11.76693",
-        "difficulty": 2373877663
+        "profitability": "73.7821",
+        "difficulty": 1431250
     },
     "Nexa": {
         "link": "https:\/\/whattomine.com\/coins\/357-nexa-nexapow",
-        "profitability": "338156.03526",
-        "difficulty": 128972.1557911174
+        "profitability": "477150.24648",
+        "difficulty": 91398.39033006321
     },
     "Nicehash-NexaPow": {
         "link": "https:\/\/whattomine.com\/coins\/53-nicehash-nexapow",
         "profitability": "0.0",
         "difficulty": 1
     },
-    "Hoosat": {
-        "link": "https:\/\/whattomine.com\/coins\/430-htn-hoohash",
-        "profitability": "23879.08768",
-        "difficulty": 47.811821567905135
+    "Conceal": {
+        "link": "https:\/\/whattomine.com\/coins\/305-ccx-cryptonightgpu",
+        "profitability": "72.86323",
+        "difficulty": 60900000
+    },
+    "Nicehash-Zhash": {
+        "link": "https:\/\/whattomine.com\/coins\/30-nicehash-zhash",
+        "profitability": "0.0",
+        "difficulty": 1
     },
     "Nicehash-BeamV3": {
         "link": "https:\/\/whattomine.com\/coins\/38-nicehash-beamhashiii",
         "profitability": "0.0",
         "difficulty": 1
     },
-    "Kiirocoin": {
-        "link": "https:\/\/whattomine.com\/coins\/363-kiiro-firopow",
-        "profitability": "170.35441",
-        "difficulty": 50.4322993540009
+    "Hoosat": {
+        "link": "https:\/\/whattomine.com\/coins\/430-htn-hoohash",
+        "profitability": "24197.02574",
+        "difficulty": 47.18134930678643
     },
-    "Etica": {
-        "link": "https:\/\/whattomine.com\/coins\/382-egaz-etchash",
-        "profitability": "55.63728",
-        "difficulty": 556756480494
-    },
-    "EthereumPoW": {
-        "link": "https:\/\/whattomine.com\/coins\/353-ethw-ethash",
-        "profitability": "0.10085",
-        "difficulty": 308469084095186
-    },
-    "EthereumClassic": {
-        "link": "https:\/\/whattomine.com\/coins\/162-etc-etchash",
-        "profitability": "0.00825",
-        "difficulty": 3746496110146384
-    },
-    "OctaSpace": {
-        "link": "https:\/\/whattomine.com\/coins\/361-octa-ethash",
-        "profitability": "0.38518",
-        "difficulty": 48448824222002
-    },
-    "Larissa": {
-        "link": "https:\/\/whattomine.com\/coins\/398-lrs-ethash",
-        "profitability": "25.33677",
-        "difficulty": 1747023223028
-    },
-    "QuarkChain": {
-        "link": "https:\/\/whattomine.com\/coins\/318-qkc-ethash",
-        "profitability": "20.85754",
-        "difficulty": 544929022906
-    },
-    "Nicehash-Etchash": {
-        "link": "https:\/\/whattomine.com\/coins\/50-nicehash-etchash",
-        "profitability": "0.0",
-        "difficulty": 1
+    "Dynexcoin": {
+        "link": "https:\/\/whattomine.com\/coins\/359-dnx-dynexsolve",
+        "profitability": "13.15324",
+        "difficulty": 2106309424
     },
     "Nicehash-FishHash": {
         "link": "https:\/\/whattomine.com\/coins\/57-nicehash-fishhash",
         "profitability": "0.0",
         "difficulty": 1
     },
+    "Kiirocoin": {
+        "link": "https:\/\/whattomine.com\/coins\/363-kiiro-firopow",
+        "profitability": "177.31059",
+        "difficulty": 48.36503479569421
+    },
+    "Etica": {
+        "link": "https:\/\/whattomine.com\/coins\/382-egaz-etchash",
+        "profitability": "66.17382",
+        "difficulty": 467701292001
+    },
+    "Larissa": {
+        "link": "https:\/\/whattomine.com\/coins\/398-lrs-ethash",
+        "profitability": "25.98832",
+        "difficulty": 1703192898611
+    },
+    "EthereumClassic": {
+        "link": "https:\/\/whattomine.com\/coins\/162-etc-etchash",
+        "profitability": "0.00847",
+        "difficulty": 3649209344140793
+    },
+    "EthereumPoW": {
+        "link": "https:\/\/whattomine.com\/coins\/353-ethw-ethash",
+        "profitability": "0.10806",
+        "difficulty": 287900960539300
+    },
     "Nicehash-Ethash": {
         "link": "https:\/\/whattomine.com\/coins\/15-nicehash-ethash",
         "profitability": "0.0",
         "difficulty": 1
     },
-    "Aleo": {
-        "link": "https:\/\/whattomine.com\/coins\/432-aleo-zksnark",
-        "profitability": "0.17892",
-        "difficulty": 31236433575095.027
+    "OctaSpace": {
+        "link": "https:\/\/whattomine.com\/coins\/361-octa-ethash",
+        "profitability": "0.41361",
+        "difficulty": 45117896414034
     },
-    "Nicehash-Xelishashv2": {
-        "link": "https:\/\/whattomine.com\/coins\/60-nicehash-xelishashv2",
-        "profitability": "0.0",
-        "difficulty": 1
+    "QuarkChain": {
+        "link": "https:\/\/whattomine.com\/coins\/318-qkc-ethash",
+        "profitability": "20.85754",
+        "difficulty": 544929022906
     },
     "Nicehash-CuckooCycle": {
         "link": "https:\/\/whattomine.com\/coins\/37-nicehash-cuckoocycle",
+        "profitability": "0.0",
+        "difficulty": 1
+    },
+    "Nicehash-Etchash": {
+        "link": "https:\/\/whattomine.com\/coins\/50-nicehash-etchash",
+        "profitability": "0.0",
+        "difficulty": 1
+    },
+    "Aleo": {
+        "link": "https:\/\/whattomine.com\/coins\/432-aleo-zksnark",
+        "profitability": "0.18425",
+        "difficulty": 30664677700573.67
+    },
+    "Nicehash-Xelishashv2": {
+        "link": "https:\/\/whattomine.com\/coins\/60-nicehash-xelishashv2",
         "profitability": "0.0",
         "difficulty": 1
     }

@@ -4,21 +4,55 @@ require_once '../includes/config.php';
 require_once '../includes/functions.php';
 
 $hardware = json_decode(file_get_contents(CONFIG_DIR . '/hardware.json'), true);
-$coins = json_decode(file_get_contents(CONFIG_DIR . '/coins.json'), true);
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, WHATTOMINE_URL . "/api/v1/coins");
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Authorization: Token ' . WHATTOMINE_API_TOKEN,
+    'Accept: application/json'
+]);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
+$coins = json_decode($response, true);
+// $coins = json_decode(file_get_contents(CONFIG_DIR . '/coins.json'), true);
 
 $result = '';
 $breakEven = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $hashRate = floatval($_POST['hashRate']);
-    $powerCost = floatval($_POST['powerCost']);
-    $powerUsage = floatval($_POST['powerUsage']);
-    $coin = $_POST['coin'];
-    $hardwareCost = floatval($_POST['hardwareCost']);
-    $profitPerDay = $coins[$coin]['profitability'] ?? 0;
-    $result = calculateROI($hashRate, $powerCost, $powerUsage, $profitPerDay);
-    if ($hardwareCost > 0 && $result > 0) {
-        $breakEven = round($hardwareCost / $result, 1);
+    $hashrate_mh = floatval($_POST['hashRate']);
+    $power_cost = floatval($_POST['powerCost']);
+    $power_w = floatval($_POST['powerUsage']);
+    $hardware_cost = floatval($_POST['hardwareCost']);
+    $selected_coin_name = $_POST['coin'];
+    echo $selected_coin_name;
+    $selected_coin_data = null;
+
+    foreach ($coins as $coin_entry) {
+        if (strtolower($coin_entry['name']) === strtolower($selected_coin_name)) {
+            $selected_coin_data = $coin_entry;
+            break;
+        }
     }
+    if (!$selected_coin_data) {
+        die("Selected coin not found.");
+    }
+    $coin_id = $selected_coin_data['id'];
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, WHATTOMINE_URL . "/coins/" . $coin_id . ".json");
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Accept: application/json']);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $coin_response = curl_exec($ch);
+    curl_close($ch);
+    $coin_data = json_decode($coin_response, true);
+
+    // Run calculation
+    $roi_result = calculate_roi($coin_data, $coins, $selected_coin_data, $hashrate_mh, $power_w, $power_cost, $hardware_cost);
+
+    // Pass values to template
+    $result = number_format($roi_result['daily_profit'], 4);
+    $breakEven = is_infinite($roi_result['roi_days']) ? '∞' : number_format($roi_result['roi_days'], 2);
 }
 ?>
 <!DOCTYPE html>
@@ -28,6 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperMiner.com - ROI Calculator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/logo/superminer.jpg">
@@ -69,8 +105,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="col-md-6">
                             <label for="coin" class="form-label fw-bold text-secondary">Coin</label>
                             <select name="coin" id="coin" class="form-select" required size="1" style="max-height: 200px; overflow-y: auto;">
-                                <?php foreach ($coins as $coin => $data): ?>
-                                    <option data-href="<?php echo $data['link'] ?? "#"; ?>" value="<?php echo htmlspecialchars($coin); ?>" data-profitability="<?php echo $data['profitability']; ?>"><?php echo htmlspecialchars($coin); ?></option>
+                                <?php foreach ($coins as $coin): ?>
+                                    <option
+                                        data-href="<?php echo WHATTOMINE_URL."/coins/".$coin['id']."-".strtolower($coin['tag'])."-".strtolower($coin['algorithm']); ?>"
+                                        value="<?php echo htmlspecialchars($coin['name']); ?>"
+                                        data-profitability="<?php echo ''; ?>"
+                                    >
+                                        <?php echo htmlspecialchars($coin['name']); ?>
+                                    </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -95,10 +137,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <a href="#" target="_blank" class="btn btn-secondary btn-lg explorer-btn" id="explorer_btn">Explorer</a>
                         </div>
                     </form>
-                    <?php if ($result !== ''): ?>
+                    <?php if (!empty($result)): ?>
                         <div class="alert alert-success mt-4 text-center">
                             <h5>Estimated Daily Profit: <span class="fw-bold text-success">$<?php echo $result; ?></span></h5>
-                            <?php if ($breakEven !== ''): ?>
+                            <?php if (!empty($breakEven)): ?>
                                 <p>Break-Even Time: <span class="fw-bold"><?php echo $breakEven; ?> days</span></p>
                             <?php endif; ?>
                         </div>
@@ -121,6 +163,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#coin').select2({
+                theme: "bootstrap-5",
+                width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+                placeholder: $( this ).data( 'placeholder' ),
+            });
+        });
+    </script>
 </body>
 </html>
