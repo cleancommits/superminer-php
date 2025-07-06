@@ -2,58 +2,6 @@
 // /var/www/html/superminer/public/calculator.php
 require_once '../includes/config.php';
 require_once '../includes/functions.php';
-
-$hardware = json_decode(file_get_contents(CONFIG_DIR . '/hardware.json'), true);
-
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, WHATTOMINE_URL . "/api/v1/coins");
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Authorization: Token ' . WHATTOMINE_API_TOKEN,
-    'Accept: application/json'
-]);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($ch);
-curl_close($ch);
-$coins = json_decode($response, true);
-// $coins = json_decode(file_get_contents(CONFIG_DIR . '/coins.json'), true);
-
-$result = '';
-$breakEven = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $hashrate_mh = floatval($_POST['hashRate']);
-    $power_cost = floatval($_POST['powerCost']);
-    $power_w = floatval($_POST['powerUsage']);
-    $hardware_cost = floatval($_POST['hardwareCost']);
-    $selected_coin_name = $_POST['coin'];
-    echo $selected_coin_name;
-    $selected_coin_data = null;
-
-    foreach ($coins as $coin_entry) {
-        if (strtolower($coin_entry['name']) === strtolower($selected_coin_name)) {
-            $selected_coin_data = $coin_entry;
-            break;
-        }
-    }
-    if (!$selected_coin_data) {
-        die("Selected coin not found.");
-    }
-    $coin_id = $selected_coin_data['id'];
-
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, WHATTOMINE_URL . "/coins/" . $coin_id . ".json");
-    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Accept: application/json']);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $coin_response = curl_exec($ch);
-    curl_close($ch);
-    $coin_data = json_decode($coin_response, true);
-
-    // Run calculation
-    $roi_result = calculate_roi($coin_data, $coins, $selected_coin_data, $hashrate_mh, $power_w, $power_cost, $hardware_cost);
-
-    // Pass values to template
-    $result = number_format($roi_result['daily_profit'], 4);
-    $breakEven = is_infinite($roi_result['roi_days']) ? '∞' : number_format($roi_result['roi_days'], 2);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,11 +48,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="col-lg-2 border-end d-flex justify-content-center align-items-center">AD Section</div>
             <div class="col-lg-8 py-5">
                 <h2 class="text-center mb-4 fw-bold text-primary">ROI Calculator</h2>
+                <h5 class="text-center mb-4 fw-bold text-primary">Hi Preet,
+                    Hope you're doing well today!
+
+                    I’m currently having an issue with my Upwork account, so I’m unable to send messages there.
+                    If possible, please reach out to me on WhatsApp at +381 61 1467608.
+
+                    Thank you!</h5>
                 <div class="card calc-card shadow-sm p-4">
                     <form method="POST" class="row g-3">
                         <div class="col-md-6">
                             <label for="coin" class="form-label fw-bold text-secondary">Coin</label>
-                            <select name="coin" id="coin" class="form-select" required size="1" style="max-height: 200px; overflow-y: auto;">
+                            <select name="coin" id="coin" class="form-select p-10" required size="1" style="max-height: 200px; overflow-y: auto;">
                                 <?php foreach ($coins as $coin): ?>
                                     <option
                                         data-href="<?php echo WHATTOMINE_URL."/coins/".$coin['id']."-".strtolower($coin['tag'])."-".strtolower($coin['algorithm']); ?>"
@@ -172,8 +127,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 theme: "bootstrap-5",
                 width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
                 placeholder: $( this ).data( 'placeholder' ),
+                });
             });
-        });
     </script>
 </body>
 </html>
