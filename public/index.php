@@ -21,6 +21,7 @@ $coins = fetchMiningData();
         <header class="hero-section text-white" id="site-header">
             <a href="/" class="d-inline-flex align-items-center text-decoration-none text-white gap-3">
                 <img src="assets/logo/superminer.jpg" alt="SuperMiner.com Logo" class="logo-glow" style="width: 56px; height: 56px; border-radius: 50%">
+                <h2 class="fs-5 fw-bold d-flex d-sm-none">SuperMiner.com</h2>
                 <h2 class="fs-2 fw-bold d-sm-flex d-none">SuperMiner.com</h2>
             </a>
             <ul class="nav fs-6 header-nav d-lg-flex d-none">

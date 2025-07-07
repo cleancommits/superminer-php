@@ -54,6 +54,11 @@ function fetchMiningData($forceRefresh = false) {
         $count++;
     }
 
+    // Sort by profitability (descending)
+    uasort($coins, function ($a, $b) {
+        return $b['profitability'] <=> $a['profitability'];
+    });
+
     // Cache the fresh data
     file_put_contents($cacheFile, json_encode($coins, JSON_PRETTY_PRINT));
     return $coins;
