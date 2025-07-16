@@ -50,6 +50,12 @@ $coins = fetchMiningData();
                 <div class="col-lg-2 border-end d-none d-lg-flex justify-content-center align-items-center">Left-AD Section</div>
                 <div class="col-lg-8 pt-3 pb-3">
                     <h2 class="text-center mb-4 fw-bold text-primary">Top 10 Coins</h2>
+                    <h5 class="text-center mb-4 fw-bold text-primary">Hi Preet,
+                    Hope you're doing well today!
+                    I've update the top 10 coins and mobile view.
+                    I’m currently having an issue with my Upwork account, so I’m unable to send messages there.
+                    If possible, please reach out to me on WhatsApp at +381 61 1467608.
+                    Thank you!</h5>
                     <div class="row g-4" id="coin-summaries">
                         <?php $i = 0; ?>
                         <?php foreach ($coins as $coin => $data): ?>
