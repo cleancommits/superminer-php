@@ -53,7 +53,7 @@ $coins = fetchMiningData();
                     <h5 class="text-center mb-4 fw-bold text-primary">Hi Preet,
                     Hope you're doing well today!
                     I've update the top 10 coins and mobile view.
-                    I’m currently having an issue with my Upwork account, so I’m unable to send messages there.
+                    I’m currently having an issue with my Upwork account. The Upwork team will refund $800 to you.
                     If possible, please reach out to me on WhatsApp at +381 61 1467608.
                     Thank you!</h5>
                     <div class="row g-4" id="coin-summaries">
