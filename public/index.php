@@ -50,12 +50,16 @@ $coins = fetchMiningData();
                 <div class="col-lg-2 border-end d-none d-lg-flex justify-content-center align-items-center">Left-AD Section</div>
                 <div class="col-lg-8 pt-3 pb-3">
                     <h2 class="text-center mb-4 fw-bold text-primary">Top 10 Coins</h2>
-                    <h5 class="text-center mb-4 fw-bold text-primary">Hi Preet,
-                    Hope you're doing well today!
-                    I've update the top 10 coins and mobile view.
-                    I’m currently having an issue with my Upwork account. The Upwork team will refund $800 to you.
-                    If possible, please reach out to me on WhatsApp at +381 61 1467608.
-                    Thank you!</h5>
+                    <h5 class="text-center mb-4 fw-bold text-primary">
+                        Hi Preet, <br>
+                        Hope you're doing well today! <br>
+                        I've updated the top 10 coins as well as the mobile view.<br>
+                        Currently, I'm facing an issue with my Upwork account — the Upwork team has confirmed they will refund $800 to you.<br>
+                        If possible, please feel free to reach out to me on:<br>
+                        WhatsApp: +381 61 1467608<br>
+                        Telegram: @peter4581<br>
+                        Thank you!
+                    </h5>
                     <div class="row g-4" id="coin-summaries">
                         <?php $i = 0; ?>
                         <?php foreach ($coins as $coin => $data): ?>
